@@ -1,0 +1,421 @@
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #050510 0%, #070720 100%);
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.f1-background-logo {
+    position: fixed;
+    width: 50%;
+    max-width: 500px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    background: rgba(12, 12, 14, 0.85);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-left: 3px solid #e10600;
+    animation: slideIn 0.5s ease-out forwards;
+    overflow-x: auto;
+    margin-left: 0; /* Aggiunto per spostare a sinistra */
+    margin-right: auto; /* Aggiunto per centrare verticalmente */
+}
+
+.red-flag-button {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e10600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1; /* Assicurati che sia sopra il contenuto */
+}
+
+.red-flag-box {
+    background-color: #e10600;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.f1-logo {
+    height: 24px;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 2px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.75); /* Colore di sfondo più scuro */
+}
+
+td {
+    padding: 8px 5px;
+    background: rgba(30, 30, 30, 0.85); /* Colore di sfondo delle celle più scuro */
+    color: white;
+    font-size: 13px;
+    border-bottom: 1px solid #222;
+    transition: background 0.2s ease;
+}
+
+tr:nth-child(even) td {
+    background: rgba(40, 40, 40, 0.85); /* Colore di sfondo delle righe pari più scuro */
+}
+
+tr:nth-child(even) td {
+    background: rgba(30, 30, 30, 0.9); /* Colore di sfondo delle righe pari più scuro */
+
+}
+
+/* Righe di background animate */
+.animated-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.animated-line {
+    position: absolute;
+    height: 1px;
+    background: rgba(0, 100, 255, 0.2);
+    width: 100%;
+    animation: lineMove 3s infinite;
+}
+
+.animated-line:nth-child(1) {
+    top: 10%;
+    animation-delay: 0s;
+}
+
+.animated-line:nth-child(2) {
+    top: 30%;
+    animation-delay: 0.5s;
+}
+
+.animated-line:nth-child(3) {
+    top: 50%;
+    animation-delay: 1s;
+}
+
+.animated-line:nth-child(4) {
+    top: 70%;
+    animation-delay: 1.5s;
+}
+
+.animated-line:nth-child(5) {
+    top: 90%;
+    animation-delay: 2s;
+}
+
+@keyframes lineMove {
+    0% {
+        opacity: 0.2;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scaleX(0.8);
+    }
+}
+
+.laps-divider {
+    position: relative;
+    height: 30px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.laps-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #e10600;
+    border-radius: 4px 0 0 4px;
+}
+
+thead tr {
+    height: 30px;
+}
+
+th {
+    padding: 8px 5px;
+    background: #111111;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+}
+
+td {
+    padding: 8px 5px;
+    background: #1a1a1a;
+    color: white;
+    font-size: 13px;
+    border-bottom: 1px solid #222;
+    transition: background 0.2s ease;
+}
+
+tr:nth-child(even) td {
+    background: #1d1d1d;
+}
+
+tr.highlight td {
+    background: rgba(225, 6, 0, 0.15);
+}
+
+tr:hover td {
+    background: #2a2a2a;
+}
+
+.position {
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+}
+
+.driver-name {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.team-name {
+    font-size: 10px;
+    color: #aaa;
+    display: block;
+    margin-top: 2px;
+}
+
+.gap {
+    font-family: 'Roboto Mono', monospace;
+    text-align: right;
+    color: #cccccc;
+}
+
+.leader {
+    color: #44cc44;
+}
+
+.tire {
+    text-align: center;
+    width: 30px;
+}
+
+.tire-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.tire-soft {
+    background-color: #ff0000;
+}
+
+.tire-medium {
+    background-color: #ffcc00;
+}
+
+.tire-hard {
+    background-color: #ffffff;
+}
+
+.fastest-lap {
+    position: relative;
+}
+
+.fastest-lap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: purple;
+    border-radius: 50%;
+}
+
+/* Nuovo stile per il pop-up delle informazioni del pilota */
+#driver-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    width: 400px; /* Larghezza fissa per il pop-up */
+}
+
+#driver-popup.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+#driver-popup .info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 4px solid; /* Linea sopra */
+}
+
+#driver-popup .info-content .position {
+    font-size: 24px;
+    font-weight: bold;
+    width: 50px; /* Larghezza fissa per la posizione */
+}
+
+#driver-popup .info-content .team-logo {
+    width: 30px; /* Larghezza del logo della scuderia */
+    height: 30px; /* Altezza del logo della scuderia */
+}
+
+#driver-popup h3 {
+    font-size: 18px;
+    margin: 0 10px; /* Margine per separare il nome dalla scuderia */
+}
+
+#driver-popup p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 450px) {
+    .container {
+        width: calc(100% - 40px);
+        margin: 0 10px;
+    }
+    
+    .team-name {
+        display: none;
+    }
+}
+
+
+/* Aggiungi questo codice per le strisce diagonali */
+@keyframes diagonalStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Aggiungi questo codice per le strisce diagonali */
+@keyframes diagonalStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.animated-stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #0d0d0d, /* Colore più scuro */
+        #0d0d0d 10px,
+        rgba(0, 0, 0, 0.8) 10px, /* Colore più scuro */
+        rgba(0, 0, 0, 0.8) 20px  /* Colore più scuro */
+    );
+    animation: diagonalStripes 10s linear infinite; /* Aumentato il tempo a 10s per un movimento più lento */
+    z-index: -1; /* Assicurati che sia dietro la tabella */
+}

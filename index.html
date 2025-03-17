@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Live Timing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Logo F1 per lo sfondo -->
+    <img src="logos/f1-logo.svg" alt="F1 Logo Background" class="f1-background-logo">
+    
+    <div class="container">
+       <div class="animated-stripes"></div> <!-- Aggiungi questo div per le strisce -->
+       <div class="title">
+           <img src="logos/f1-logo.svg" alt="F1 Logo" class="f1-logo">
+           <h2>Live</h2>
+       </div>
+
+       <!-- Box per la bandiera rossa -->
+       <div id="red-flag-box" class="red-flag-box hidden">Bandiera Rossa</div>
+    
+       <!-- Linee animate di background -->
+       <div class="animated-lines">
+           <div class="animated-line"></div>
+           <div class="animated-line"></div>
+           <div class="animated-line"></div>
+           <div class="animated-line"></div>
+           <div class="animated-line"></div>
+       </div>
+    
+       <div class="laps-divider">
+          Informazioni Giro
+       </div>
+    
+       <table>
+           <thead>
+               <tr>
+                   <th>Giro</th>
+                   <th>Giro Veloce</th>
+               </tr>
+           </thead>
+           <tbody id="lap-info">
+               <tr>
+                   <td>32/57</td>
+                   <td>1:22.105</td>
+               </tr>
+           </tbody>
+       </table>
+
+       <table>
+           <thead>
+               <tr>
+                   <th class="position">P</th>
+                   <th></th>
+                   <th>Pilota</th>
+                   <th class="gap">Distacco</th>
+                   <th class="tire">Gomme</th>
+               </tr>
+           </thead>
+           <tbody id="leaderboard"></tbody>
+       </table>
+   </div>
+
+   <!-- Pulsante Bandiera Rossa -->
+   <button id="red-flag-button" class="red-flag-button">Bandiera Rossa</button>
+
+    <!-- Pop-up per le informazioni del pilota -->
+    <div id="driver-popup">
+        <div class="info-content">
+            <div class="position" id="popup-driver-position"></div>
+            <div>
+                <h3 id="popup-driver-name"></h3>
+                <p id="popup-driver-team"></p>
+                <p id="popup-driver-fullname"></p> <!-- Aggiunto per il nome completo -->
+            </div>
+            <img id="popup-driver-logo" src="" alt="Logo Pilota" class="team-logo">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
