@@ -47,4 +47,7 @@ JavaScript: Dynamic functionality for sorting and interaction.
 
 Feel free to contribute by creating a pull request or opening an issue!
 
+Preview
+![image](https://github.com/user-attachments/assets/204b6738-a6b1-40f5-8f6d-2eb0ba89ce6f)
+
 
